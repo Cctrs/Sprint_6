@@ -1,0 +1,18 @@
+from selenium.webdriver.common.by import By
+
+name_input = (By.CSS_SELECTOR, 'input[placeholder="* Имя"]')
+surname_input = (By.CSS_SELECTOR, 'input[placeholder="* Фамилия"]')
+address_input = (By.CSS_SELECTOR, 'input[placeholder="* Адрес: куда привезти заказ"]')
+metro_station_input = (By.CSS_SELECTOR, 'input[placeholder="* Станция метро"]')
+metro_station_dropdown_select = lambda station_name: (By.XPATH, f"//div[text()='{station_name}']")
+phone_number_input = (By.CSS_SELECTOR, 'input[placeholder="* Телефон: на него позвонит курьер"]')
+next_button = (By.XPATH, '//button[text()="Далее"]')
+date_input = (By.CSS_SELECTOR, 'input[placeholder="* Когда привезти самокат"]')
+date_in_calendar = lambda order_date: (By.XPATH, f"//div[@aria-label='Choose {order_date}']")
+rent_time_input = (By.CLASS_NAME, 'Dropdown-control')
+rent_time_amount_select = lambda rent_time: (By.XPATH, f'//div[text()="{rent_time}"]')
+black_scooter = (By.ID, 'black')
+grey_scooter = (By.ID, 'grey')
+order_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Заказать"]')
+confirm_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Да"]')
+order_number_modal = (By.XPATH, '//div[text()="Заказ оформлен"]')
