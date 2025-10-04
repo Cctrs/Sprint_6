@@ -13,7 +13,11 @@ class BasePage:
         self.driver.find_element(*locator).click()
 
 
-    def wait_page_for_load(self, locator):
+    def find_all_elements(self, locator):
+        return self.driver.find_elements(*locator)
+
+
+    def wait_element_for_load(self, locator):
         WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
 
     
@@ -33,8 +37,8 @@ class BasePage:
 
 
     def scroll_to_element(self, locator):
-        faq_header = self.driver.find_element(*locator)
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", faq_header)
+        element = self.driver.find_element(*locator)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
 
     def get_current_url(self):
