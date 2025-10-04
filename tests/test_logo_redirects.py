@@ -2,6 +2,7 @@ import allure
 from locators.base_page_locators import *
 from pages.base_page import *
 from pages.main_page import *
+from urls import *
 
 
 class TestLogoRedirects:
@@ -14,7 +15,7 @@ class TestLogoRedirects:
         main_page.click_main_page_order_button()
         default_page.click_scooter_logo()
 
-        assert driver.current_url == 'https://qa-scooter.praktikum-services.ru/'
+        assert driver.current_url == main_page_url
 
 
     @allure.title('Проверка редиректа на главную страницу dzen.ru по клику на название "Яндекс"')
@@ -23,4 +24,4 @@ class TestLogoRedirects:
 
         default_page.click_yandex_logo()
 
-        assert 'https://dzen.ru/' in driver.current_url
+        assert dzen_mane_page_url in driver.current_url
