@@ -1,5 +1,4 @@
 import allure
-from locators.main_page_locators import *
 from pages.main_page import *
 from datasets import faq_list
 
@@ -11,8 +10,9 @@ class TestFaq:
     def test_faq_answer_corresponds_faq_question(self, driver, faq_data):
         main_page = MainPage(driver)
 
+        main_page.wait_main_page_for_load()
+        main_page.cookie_accept()
         main_page.scroll_to_faq()
         main_page.click_faq_button(faq_data['question'])
     
-
         assert main_page.check_faq_answer() == faq_data['answer']

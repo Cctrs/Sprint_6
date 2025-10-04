@@ -1,6 +1,5 @@
 import allure
 from locators.order_page_locators import *
-from locators.base_page_locators import *
 from conftest import *
 from pages.base_page import BasePage
 

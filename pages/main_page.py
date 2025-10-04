@@ -1,8 +1,7 @@
 import allure
 from locators.main_page_locators import *
-from locators.base_page_locators import *
 from conftest import *
-from base_page import BasePage
+from pages.base_page import BasePage
 
 
 class MainPage(BasePage):
