@@ -13,6 +13,10 @@ class BasePage:
         self.driver.find_element(*locator).click()
 
 
+    def find_one_element(self, locator):
+        return self.driver.find_element(*locator)
+
+
     def find_all_elements(self, locator):
         return self.driver.find_elements(*locator)
 
