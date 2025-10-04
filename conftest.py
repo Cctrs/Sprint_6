@@ -11,7 +11,5 @@ from urls import main_page_url
 def driver():
     driver = webdriver.Firefox()
     driver.get(main_page_url)
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(yandex_logo))
-    driver.find_element(*accept_cookies_button).click()
     yield driver
     driver.quit()
